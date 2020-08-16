@@ -26,11 +26,11 @@ restcountries_api <- function(path){
     stop("API call executed successfully, but did not return expected json format",
          call. = FALSE)
   }
-  output <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = TRUE)
+  return_df <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = TRUE)
 
   structure(
     list(
-      content = output,
+      content = return_df,
       path = path,
       response = resp
     ),
