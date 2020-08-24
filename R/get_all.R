@@ -1,3 +1,9 @@
+# INITIALISE ====
+
+# conditionally setup environment
+if (sys.parent() == 0) try(source('R/setup_environment.R'), silent = T)
+source("R/restcountries_api.R")
+
 
 get_all <- function(x){
 

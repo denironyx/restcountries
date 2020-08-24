@@ -1,6 +1,3 @@
-library(jsonlite)
-library(httr)
-
 
 ua <- user_agent("https://github.com/denironyx/countries")
 
