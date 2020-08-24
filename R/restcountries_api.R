@@ -1,6 +1,17 @@
+library(jsonlite)
+library(httr)
+
 
 ua <- user_agent("https://github.com/denironyx/countries")
 
+#' Title
+#'
+#' @param path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 restcountries_api <- function(path){
   url <- paste0("https://restcountries.eu/rest/v2/", path = path)
 
@@ -28,20 +39,22 @@ restcountries_api <- function(path){
   }
   return_df <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = TRUE)
 
-  structure(
-    list(
-      content = return_df,
-      path = path,
-      response = resp
-    ),
-    class = "restcountries_api"
-  )
+  #structure(
+  #  list(
+   #   content = return_df,
+      #path = path,
+    #  response = resp
+    #),
+  #  class = "restcountries_api"
+  #)
+
+  return_df
 }
 
-region_data <- restcountries_api("region/afric")
+region_data <- restcountries_api("region/africa")
 View(region_data$content)
 
-
+View(region_data$content)
 
 
 

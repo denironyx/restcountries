@@ -1,41 +1,28 @@
 
-get_all <- function(country = "all"){
+get_all <- function(x){
 
-  if("all" %in% country) {
-    restcountries_api(country)
+  if(x == "all") {
+    restcountries_api(x)
   } else {
     stop("country parameter has no valid values. Please check documentation for valid inputs")
   }
 
   ## remove the errored returns
   df_index <- sapply(return_df, is.data.frame)
-  out_list  <- return_df[df_index]
+  out_list  <- return_df[!df_index]
 
   ## defaultName" - "newName"
   out_cols <- c(
-    "name" = "country_name",
-    "topLevelDomain" = "domain",
-    "alpha2Code" = "iso2c",
-    "alpha3Code" = "iso3c",
-    "callingCodes" = "phone_code",
-    "capital" = "capital",
-    "altSpellings" = "alt_spelling",
-    "region" = "region",
-    "subregion" = "sub_region",
-    "population" = "population",
-    "latlng" = "lat_lon",
-    "demonym" = "demonym",
-    "area"  = "area",
-    "gini" = "gini",
-    "timezones" = "timezones",
-    "borders" = "borders",
-    "nativeName" = "native_name",
-    "numericCode" = "numeric_code",
-    "currencies" = "currencies",
-    "languages" = "languages",
-    "flag" = "flags",
-    "regionalBlocs" = "regional_blocs",
-    "cioc" = "cioc"
+    "country_name" = "name",
+    "domain" = "topLevelDomain",
+    "iso2c" = "alpha2Code",
+    "iso3c" = "alpha3Code",
+    "calling_codes" = "callingCodes",
+    "alt_spelling" = "altSpellings",
+    "sub_region" = "subregion",
+    "native_name" = "nativeName",
+    "regional_blocs" = "regionalBlocs",
+    "numeric_code" = "numericCode"
   )
 
   if(length(out_list) == 0){
@@ -46,11 +33,16 @@ get_all <- function(country = "all"){
 
   } else {
 
-    out_df <- row.names(do.call('rbind', out_list))
-    row.names(out_df) <- NULL
-
+    out_df <- out_list %>%
+      rename(
+        all_of(out_cols)
+      ) %>%
+      hoist(latlng,
+            lat = list(1),
+            lon = list(2)
+            )
   }
+  out_df
 }
 
-output <- get_all("country")
 
