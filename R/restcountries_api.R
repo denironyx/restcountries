@@ -33,9 +33,12 @@ restcountries_api <- function(path){
   if (http_type(resp) != "application/json") {
     stop("API call executed successfully, but did not return expected json format",
          call. = FALSE)
-  }
-  return_df <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = TRUE)
+  } else{
 
+    return_df <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = TRUE)
+  }
+
+  return_df
   #structure(
   #  list(
    #   content = return_df,
@@ -45,13 +48,10 @@ restcountries_api <- function(path){
   #  class = "restcountries_api"
   #)
 
-  return_df
+
 }
-
-region_data <- restcountries_api("region/africa")
-View(region_data$content)
-
-View(region_data$content)
+url_df <- fromJSON(content(url, "text"), simplifyVector = TRUE)
+head(url_df)
 
 
 
