@@ -1,5 +1,8 @@
+# TODO, user agent maybe shouldn't be bare like this
 
-ua <- user_agent("https://github.com/denironyx/countries")
+#' User agent for all interaction with restcountries_api
+#' @importFrom httr user_agent
+ua <- httr::user_agent("https://github.com/denironyx/countries")
 
 #' Title
 #'
@@ -9,6 +12,8 @@ ua <- user_agent("https://github.com/denironyx/countries")
 #' @export
 #'
 #' @examples
+#' @importFrom jsonlite fromJSON
+#' @importFrom httr content GET
 restcountries_api <- function(path){
   url <- paste0("https://restcountries.eu/rest/v2/", path = path)
 
@@ -50,8 +55,12 @@ restcountries_api <- function(path){
 
 
 }
-url_df <- fromJSON(content(url, "text"), simplifyVector = TRUE)
-head(url_df)
+
+# TODO: It isn't clear to me what these are doing, should they be here?
+# Should they be documented?
+# The code doesn't seem to work, so I'm commenting it out
+# url_df <- jsonlite::fromJSON(content(url, "text"), simplifyVector = TRUE)
+
 
 
 
