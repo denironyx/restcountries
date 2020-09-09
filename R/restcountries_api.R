@@ -1,3 +1,4 @@
+# TODO, user agent maybe shouldn't be bare like this
 
 ua <- user_agent("https://github.com/denironyx/countries")
 
