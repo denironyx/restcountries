@@ -1,6 +1,8 @@
 # TODO, user agent maybe shouldn't be bare like this
 
-ua <- user_agent("https://github.com/denironyx/countries")
+#' User agent for all interaction with restcountries_api
+#' @importFrom httr user_agent
+ua <- httr::user_agent("https://github.com/denironyx/countries")
 
 #' Title
 #'
@@ -10,6 +12,8 @@ ua <- user_agent("https://github.com/denironyx/countries")
 #' @export
 #'
 #' @examples
+#' @importFrom jsonlite fromJSON
+#' @importFrom httr content GET
 restcountries_api <- function(path){
   url <- paste0("https://restcountries.eu/rest/v2/", path = path)
 
