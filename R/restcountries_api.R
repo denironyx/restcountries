@@ -51,8 +51,12 @@ restcountries_api <- function(path){
 
 
 }
-url_df <- fromJSON(content(url, "text"), simplifyVector = TRUE)
-head(url_df)
+
+# TODO: It isn't clear to me what these are doing, should they be here?
+# Should they be documented?
+# The code doesn't seem to work, so I'm commenting it out
+# url_df <- jsonlite::fromJSON(content(url, "text"), simplifyVector = TRUE)
+
 
 
 
