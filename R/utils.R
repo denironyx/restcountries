@@ -147,6 +147,14 @@ get_countries_by_name <- function(x){
 }
 
 
+#' Title
+#'
+#' @param input
+#'
+#' @return
+#' @export
+#' @importFrom dplyr '%>%' all_of rename select
+#' @importFrom tidyr hoist unnest
 get_countries_by_currency <- function(input){
 
   df <- restcountries_api(paste0("currency/", input))

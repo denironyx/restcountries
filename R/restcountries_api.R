@@ -13,7 +13,7 @@ ua <- httr::user_agent("https://github.com/denironyx/countries")
 #'
 #' @examples
 #' @importFrom jsonlite fromJSON
-#' @importFrom httr content GET
+#' @importFrom httr GET http_error http_status http_type content
 restcountries_api <- function(path){
   url <- paste0("https://restcountries.eu/rest/v2/", path = path)
 
@@ -21,7 +21,7 @@ restcountries_api <- function(path){
 
   if(http_error(resp)){
 
-    error_status <- httr::http_status(resp)
+    error_status <- http_status(resp)
 
     stop(
       sprintf(
