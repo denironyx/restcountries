@@ -5,15 +5,10 @@
 # if (sys.parent() == 0) try(source('R/setup_environment.R'), silent = T)
 # source("R/restcountries_api.R")
 
-get_all <- function(x){
+rc_all <- function(){
 
-  if(x == "all") {
 
-    df <- restcountries_api(x)
-
-  } else {
-    stop("country parameter has no valid values. Please check documentation for valid inputs")
-  }
+  df <- restcountries_api("all")
 
   ## remove the errored returns
   df_index <- sapply(df, is.data.frame)
