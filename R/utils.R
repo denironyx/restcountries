@@ -5,6 +5,12 @@
 # if (sys.parent() == 0) try(source('R/setup_environment.R'), silent = T)
 # source("R/restcountries_api.R")
 
+#' Returns all the restcountries data
+#'
+#' @return
+#' @export
+#'
+#' @examples
 rc_all <- function(){
 
 
@@ -48,7 +54,7 @@ rc_all <- function(){
   out_df
 }
 
-get_countries_by_lang <- function(x){
+rc_by_lang <- function(x){
 
   if(x %in% c("en", "ng", "es", "fr")) {
 
@@ -97,7 +103,7 @@ get_countries_by_lang <- function(x){
   out_df
 }
 
-get_countries_by_name <- function(x){
+rc_by_name <- function(x){
 
   df <- restcountries_api(paste0("name/", x, "?fullText=true"))
 
@@ -150,7 +156,7 @@ get_countries_by_name <- function(x){
 #' @export
 #' @importFrom dplyr '%>%' all_of rename select
 #' @importFrom tidyr hoist unnest
-get_countries_by_currency <- function(input){
+rc_by_currency <- function(input){
 
   df <- restcountries_api(paste0("currency/", input))
 
@@ -195,7 +201,7 @@ get_countries_by_currency <- function(input){
 }
 
 
-get_countries_by_capital <- function(input){
+rc_by_capital <- function(input){
 
   df <- restcountries_api(paste0("capital/", input))
 
@@ -239,7 +245,7 @@ get_countries_by_capital <- function(input){
 }
 
 
-get_countries_by_region <- function(input){
+rc_by_region <- function(input){
 
   df <- restcountries_api(paste0("region/", input))
 
@@ -282,7 +288,16 @@ get_countries_by_region <- function(input){
 
 }
 
-get_countries_by_callingcode <- function(input){
+#' Search by calling code
+#'
+#' @param rc_by_callingcode A country telephone number prefixes for reachihng telephone subscribers in the network of the member countries or regions.
+#'
+#'
+#' @return
+#' @export
+#'
+#' @examples
+rc_by_callingcode <- function(input){
 
   df <- restcountries_api(paste0("callingcode/", input))
 
@@ -324,7 +339,7 @@ get_countries_by_callingcode <- function(input){
   out_df
 }
 
-get_countries_by_blocs <- function(input){
+rc_by_blocs <- function(input){
 
   df <- restcountries_api(paste0("regionalbloc/", input))
 
@@ -367,7 +382,7 @@ get_countries_by_blocs <- function(input){
 
 }
 
-get_countries_by_code <- function(input){
+rc_by_code <- function(input){
 
   df <- restcountries_api(paste0("alpha/", "co"))
 
