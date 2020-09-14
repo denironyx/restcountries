@@ -14,7 +14,8 @@ ua <- httr::user_agent("https://github.com/denironyx/countries")
 #' @examples
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET http_error http_status http_type content
-restcountries_api <- function(path){
+#' @importFrom R.cache addMemoization
+restcountries_api <- addMemoization(function(path){
   url <- paste0("https://restcountries.eu/rest/v2/", path = path)
 
   resp = GET(url, ua)
@@ -54,7 +55,7 @@ restcountries_api <- function(path){
   #)
 
 
-}
+})
 
 # TODO: It isn't clear to me what these are doing, should they be here?
 # Should they be documented?
