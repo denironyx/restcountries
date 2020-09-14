@@ -1,5 +1,7 @@
 # INITIALISE ====
 
+# TODO: Add roxygen2 blocks for all exported functions
+# TODO: Extract repeated code, a lot looks like it can be pushed down into restcountries_api
 # TODO: we generally shouldn't source like this in the package initalization
 # conditionally setup environment
 # if (sys.parent() == 0) try(source('R/setup_environment.R'), silent = T)
