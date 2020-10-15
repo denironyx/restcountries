@@ -4,7 +4,7 @@
 \alias{restcountries_api}
 \title{Title}
 \usage{
-restcountries_api(path)
+restcountries_api(..., envir = parent.frame())
 }
 \arguments{
 \item{path}{}

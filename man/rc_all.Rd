@@ -2,7 +2,8 @@
 % Please edit documentation in R/utils.R
 \name{rc_all}
 \alias{rc_all}
-\title{Returns all the restcountries data}
+\title{Search by All
+The \code{rc_all} function described the REST endpoint available that you can use to search for all the countries information.}
 \usage{
 rc_all()
 }
@@ -10,5 +11,11 @@ rc_all()
 
 }
 \description{
-Returns all the restcountries data
+Search by All
+The \code{rc_all} function described the REST endpoint available that you can use to search for all the countries information.
+}
+\examples{
+\dontrun{
+x <- rc_all()
+}
 }

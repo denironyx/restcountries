@@ -2,16 +2,26 @@
 % Please edit documentation in R/utils.R
 \name{rc_by_callingcode}
 \alias{rc_by_callingcode}
-\title{Search by calling code}
+\title{Search by Calling Code}
 \usage{
-rc_by_callingcode(input)
+rc_by_callingcode(code)
 }
 \arguments{
-\item{rc_by_callingcode}{A country telephone number prefixes for reachihng telephone subscribers in the network of the member countries or regions.}
+\item{code}{A country telephone number prefixes for reaching telephone subscribers in the network of the member countries or regions.}
 }
 \value{
 
 }
 \description{
-Search by calling code
+Country codes are a component of the international telephone numbering plan, and are necessary only when
+dialing a telephone number to establish a call to another country. Country codes are dialed before the national telephone number.
+By convention, international telephone numbers are represented by prefixing the country code with a plus sign +,
+which also indicates to the subscriber that the local international call prefix must first be dialed.
+}
+\examples{
+\dontrun{
+x <- rc_by_callingcode("234")
+x
+}
+
 }
