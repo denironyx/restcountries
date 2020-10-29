@@ -2,7 +2,8 @@
 % Please edit documentation in R/restcountries_api.R
 \name{restcountries_api}
 \alias{restcountries_api}
-\title{Title}
+\title{Title
+This function fetch the data from the RESTful API}
 \usage{
 restcountries_api(..., envir = parent.frame())
 }
@@ -14,4 +15,5 @@ restcountries_api(..., envir = parent.frame())
 }
 \description{
 Title
+This function fetch the data from the RESTful API
 }

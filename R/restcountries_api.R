@@ -5,13 +5,13 @@
 ua <- httr::user_agent("https://github.com/denironyx/countries")
 
 #' Title
-#'
+#' This function fetch the data from the RESTful API
 #' @param path
 #'
 #' @return
-#' @export
 #'
-#' @examples
+#'
+#'
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET http_error http_status http_type content
 #' @importFrom R.cache addMemoization

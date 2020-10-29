@@ -7,7 +7,7 @@
 rc_by_callingcode(code)
 }
 \arguments{
-\item{code}{A country telephone number prefixes for reaching telephone subscribers in the network of the member countries or regions.}
+\item{code}{Vector(character) which is the country telephone number prefixes for reaching telephone subscribers in the network of the member countries or regions.}
 }
 \value{
 
@@ -16,7 +16,7 @@ rc_by_callingcode(code)
 Country codes are a component of the international telephone numbering plan, and are necessary only when
 dialing a telephone number to establish a call to another country. Country codes are dialed before the national telephone number.
 By convention, international telephone numbers are represented by prefixing the country code with a plus sign +,
-which also indicates to the subscriber that the local international call prefix must first be dialed.
+which also indicates to the subscriber that the local international call prefix must first be dialed. \url{https://en.wikipedia.org/wiki/List_of_country_calling_codes}
 }
 \examples{
 \dontrun{

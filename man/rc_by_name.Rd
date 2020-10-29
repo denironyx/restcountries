@@ -7,13 +7,16 @@
 rc_by_name(name)
 }
 \arguments{
-\item{name}{\itemize{
-\item 
-}}
+\item{name}{vector(character) of the name of a country of choice.}
 }
 \value{
 
 }
 \description{
-Search by Country Full Name
+Search by country name. This function will allow you search countries by their short name, official name,native name or partial name.
+More information can be found \url{https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages}
+}
+\examples{
+\dontrun{
+}
 }

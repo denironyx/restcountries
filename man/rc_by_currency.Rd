@@ -2,16 +2,22 @@
 % Please edit documentation in R/utils.R
 \name{rc_by_currency}
 \alias{rc_by_currency}
-\title{Title}
+\title{Search by Currency}
 \usage{
 rc_by_currency(input)
 }
 \arguments{
-\item{input}{}
+\item{input}{Vector(charact) which contains three-character alphabetic, and the three digit numeric ISO 4217 code for any country.}
 }
 \value{
 
 }
 \description{
-Title
+Currency is a system of money in general use in a particular country at a specific time. You can read more about the currencies for the various countries \url{https://www.xe.com/currency/}
+}
+\examples{
+\dontrun{
+x <- rc_by_currency('USD')
+x
+}
 }

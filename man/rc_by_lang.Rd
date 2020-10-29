@@ -7,13 +7,13 @@
 rc_by_lang(lang)
 }
 \arguments{
-\item{lang}{language symbol (string such as "en", "eng", "fr", "es")}
+\item{lang}{vector(character) of language symbol (string such as "en", "eng", "fr", "es")}
 }
 \value{
 
 }
 \description{
-The \code{rc_by_lang} function returns the countries information for all the different language symbol.
+The \code{rc_by_lang} function returns the countries information for all the different language symbol. ISO 639-1 language code
 }
 \examples{
 \dontrun{
