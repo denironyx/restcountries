@@ -16,6 +16,7 @@
 #' @examples
 #' \dontrun{
 #' x <- rc_all()
+#' x
 #' }
 rc_all <- function(){
 
@@ -113,7 +114,7 @@ rc_by_currency <- function(input){
 #' Search by Capital City
 #'
 #' `rc_by_capital()` is used to search the restcountries restful API by the name of the city or town exercising primary status in a country, state, province
-#' or other administrative region, usually as its seat of government. Find more information \url{https://en.wikipedia.org/wiki/Capital_city}
+#' or other administrative region, usually as its seat of government.
 #'
 #' @param city Vector(character) of the capital city of the country you will like to search for.
 #'
