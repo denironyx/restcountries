@@ -6,7 +6,6 @@
 #' @importFrom dplyr '%>%' all_of rename select
 #' @importFrom tidyr unnest hoist
 #'
-#' @examples
 restcountries_clean <- function(df){
 
   ## remove the errored returns
