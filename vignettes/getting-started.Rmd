@@ -1,0 +1,135 @@
+---
+title: "Getting Started with RestCountries"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with RestCountries}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo = FALSE}
+library(countries)
+```
+
+# Introduction
+The Rest Countries datapackage is a wrapper of the popular [Rest Countries](https://restcountries.eu/) API project for getting information about the world's nations via REST calls. These calls allow users to retrieve all available countries or to retreive a given country's currency, capital city, calling code, region, sub-region, ISO 639-1 language, name, or country code.
+
+The API END points output include country's name, full name, code, list of codes, currency, language, capital city, calling code, region, bloc, geographical coordinate, population and more. 
+
+In this vignette I walk through the process of getting started with the restcountries datapackage. 
+
+# Installing `restcountries`
+
+The restcountries package can be downloaded from Github using the remotes package which allows easy installation of R packages from remote repositories such as Github. 
+```
+install.packages("remotes")
+library(remotes)
+remotes::install_github("denironyx/restcountries")
+```
+
+# Rest Countries endpoints
+The restcountriesr datapackage can be filter by the following.
+
+- Search by All
+- Search by Name or Full Name
+- Country's Code
+- Country's Currency
+- Search by Capital City
+- Search by Calling Code
+- Search by Region
+
+When a user filter using any of the above function the following are the column names that are queried in the result.
+ "country_name"         "domain"               "iso2c"                "iso3c"               
+ "calling_codes"        "capital"              "alt_spelling"         "region"              
+ "sub_region"           "population"           "lat"                  "lon"                 
+ "demonym"              "area"                 "gini"                 "timezones"           
+ "borders"              "native_name"          "numeric_code"         "currencies"          
+ "languages_iso639_1"   "languages_iso639_2"   "languages_name"       "languages_nativeName"
+ "flag"                 "regional_blocs"       "cioc"
+ 
+ In this vignette I decided to subset the column and data I will be working with to provide a suitable examples. Here are the columns name I will be working with 
+ "country_name"         "capital"               "iso2c"                "iso3c" 
+ "calling_codes"        "lat"                   "lon"                  "region" 
+ "currencies"           "population"
+```
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+```
+
+
+
+## Search by All
+ The `rc_all` function described the REST endpoint available that you can use to search for all the countries information.
+
+```{r}
+library(countries)
+library(dplyr)
+
+df <- rc_all()
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+# The first 6 rows of the result queried
+df %>% 
+  select(all_of(parameter)) %>% 
+  head()
+```
+
+## Search by Name
+Search by country name. This function will allow you search countries by their short name, official name,native name or partial name. More information can be found https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages
+  
+```{r}
+df <- rc_by_name("Nigeria")
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+# print the result of the queried data
+df %>% 
+  select(all_of(parameter)) %>% 
+  head()
+```
+
+## Search by Country's Code
+Country codes are a component of the international telephone numbering plan, and are necessary only when dialing a telephone number to establish a call to another country. Country codes are dialed before the national telephone number. By convention, international telephone numbers are represented by prefixing the country code with a plus sign +, which also indicates to the subscriber that the local international call prefix must first be dialed. https://en.wikipedia.org/wiki/List_of_country_calling_codes
+
+```{r}
+df <- rc_by_callingcode("234")
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+#print the result of the query
+df %>% 
+  select(all_of(parameter)) %>% 
+  head()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
