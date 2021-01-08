@@ -46,6 +46,7 @@ The restcountriesr datapackage can be filter by the following.
 - Search by Region
 
 When a user filter using any of the above function the following are the column names that are queried in the result.
+```
  "country_name"         "domain"               "iso2c"                "iso3c"               
  "calling_codes"        "capital"              "alt_spelling"         "region"              
  "sub_region"           "population"           "lat"                  "lon"                 
@@ -54,14 +55,16 @@ When a user filter using any of the above function the following are the column 
  "languages_iso639_1"   "languages_iso639_2"   "languages_name"       "languages_nativeName"
  "flag"                 "regional_blocs"       "cioc"
  
+```
+ 
  In this vignette I decided to subset the column and data I will be working with to provide a suitable examples. Here are the columns name I will be working with 
+```
  "country_name"         "capital"               "iso2c"                "iso3c" 
  "calling_codes"        "lat"                   "lon"                  "region" 
  "currencies"           "population"
-```
+ 
 parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
 ```
-
 
 
 ## Search by All
