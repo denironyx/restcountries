@@ -238,6 +238,7 @@ rc_by_code <- function(code){
   } else {
 
     out_list
+
   }
 
 

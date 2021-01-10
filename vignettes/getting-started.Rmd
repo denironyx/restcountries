@@ -115,8 +115,52 @@ df %>%
   head()
 ```
 
+## Search by Capital City
+`rc_by_capital()` is used to search the restcountries restful API by the name of the city or town exercising primary status in a country, state, province or other administrative region, usually as its seat of government.
+
+```{r}
+# Query Nigeria information by using the capital name 'abuja'
+df <- rc_by_capital("abuja")
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+# print the result of the query
+df %>% 
+  select(all_of(parameter))
+```
+
+## Search by Region
+Query the restcountries restful api based on united nations country grouping of world regions. You can research the grouping \url{https://www.nationsonline.org/oneworld/countries_of_the_world.htm}.
+
+```{r}
+# Query the various countries in a 'africa' region
+df <- rc_by_region("africa")
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+# print the result of the query
+df %>% 
+  select(all_of(parameter)) %>% 
+  head()
+```
+
+## Search by Country Code
+Search by ISO 3166-1 2-letter or 3-letter country code \url{https://www.iban.com/country-codes}. The function to perform this query is `rc_by_code`.
+
+```{r}
+# Search the restcountries api using country code (DE)
+df <- rc_by_code('DE')
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+df %>% 
+  select(all_of(parameter))
 
 
+```
 
 
 
