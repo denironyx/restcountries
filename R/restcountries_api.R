@@ -218,6 +218,7 @@ rc_by_blocs <- function(bloc){
 #'
 #' @param code Vector(character) which contains the country code to query the restcountries API
 #'
+#' @importFrom purrr map_if
 #' @return
 #' @export
 #'
@@ -226,8 +227,15 @@ rc_by_code <- function(code){
 
   df <- restcountries_api(paste0("alpha/", code))
 
-  df_index <- sapply(df, is.data.frame)
-  out_list  <- df[!df_index]
+
+  df_list <- map_if(df, is.data.frame, list)
+  df_list$altSpellings <- NULL
+  df_list$borders <- NULL
+  df_list$translations <- NULL
+  df_list$latlng <- NULL
+
+  out_list <- as_tibble(df_list)
+
 
   if(length(out_list) == 0){
 
