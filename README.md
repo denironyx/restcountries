@@ -1,2 +1,2 @@
-# countries
-Get information about countries via a RESTful API
+# restcountriesr
+A simple wrapper of the rest countries restful API 
