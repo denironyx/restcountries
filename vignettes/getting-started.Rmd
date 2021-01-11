@@ -71,7 +71,7 @@ parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "la
  The `rc_all` function described the REST endpoint available that you can use to search for all the countries information.
 
 ```{r}
-library(countries)
+library(restcountriesr)
 library(dplyr)
 
 df <- rc_all()
