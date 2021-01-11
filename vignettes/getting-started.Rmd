@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup, echo = FALSE}
-library(countries)
+library(restcountriesr)
 ```
 
 # Introduction
@@ -154,10 +154,8 @@ Search by ISO 3166-1 2-letter or 3-letter country code \url{https://www.iban.com
 df <- rc_by_code('DE')
 
 ##List of columns
-parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
 
-df %>% 
-  select(all_of(parameter))
+df 
 
 
 ```
