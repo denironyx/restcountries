@@ -14,10 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup, echo = FALSE}
-library(restcountriesr)
-```
-
 # Introduction
 The Rest Countries datapackage is a wrapper of the popular [Rest Countries](https://restcountries.eu/) API project for getting information about the world's nations via REST calls. These calls allow users to retrieve all available countries or to retreive a given country's currency, capital city, calling code, region, sub-region, ISO 639-1 language, name, or country code.
 
@@ -25,7 +21,7 @@ The API END points output include country's name, full name, code, list of codes
 
 In this vignette I walk through the process of getting started with the restcountries datapackage. 
 
-# Installing `restcountries`
+# Installing `restcountriesr`
 
 The restcountries package can be downloaded from Github using the remotes package which allows easy installation of R packages from remote repositories such as Github. 
 ```
@@ -33,6 +29,11 @@ install.packages("remotes")
 library(remotes)
 remotes::install_github("denironyx/restcountries")
 ```
+
+```{r setup, echo = FALSE}
+library(restcountriesr)
+```
+
 
 # Rest Countries endpoints
 The restcountriesr datapackage can be filter by the following.
