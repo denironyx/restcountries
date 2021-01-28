@@ -5,11 +5,11 @@ Version: 0.1.0
 Author: c(person(given = "Dennis",
                 family = "Irorere",
                 email = "denironyx@gmail.com")),
-          person(given = "Russell",
+          person(given = "Russell S.",
                 family = "Pierce",
-                email = ""))
+                email = "russell.s.pierce@gmail.com"))
 Description: A wrapper of the popular restcountries restful api
-License: MIT + file LICENSE
+License: MIT + file LICENSE.md
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
