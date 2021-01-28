@@ -89,7 +89,7 @@ rc_by_name <- function(name){
 #'
 #' Currency is a system of money in general use in a particular country at a specific time. You can read more about the currencies for the various countries \url{https://www.xe.com/currency/}
 #'
-#' @param input Vector(charact) which contains three-character alphabetic, and the three digit numeric ISO 4217 code for any country.
+#' @param input Vector(character) which contains three-character alphabetic, and the three digit numeric ISO 4217 code for any country.
 #'
 #' @return
 #' @export
