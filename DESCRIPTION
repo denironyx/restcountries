@@ -1,6 +1,6 @@
 Package: restcountriesr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R wrapper for Restcountries API
 Version: 0.1.0
 Author: c(person(given = "Dennis",
                 family = "Irorere",
@@ -20,5 +20,6 @@ Imports:
   R.cache
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
