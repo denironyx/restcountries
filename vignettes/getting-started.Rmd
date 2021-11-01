@@ -1,8 +1,8 @@
 ---
-title: "Getting Started with RestCountries"
+title: "Getting Started with restcountriesr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting Started with RestCountries}
+  %\VignetteIndexEntry{Getting Started with restcountriesr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,21 +15,26 @@ knitr::opts_chunk$set(
 ```
 
 # Introduction
-The Rest Countries datapackage is a wrapper of the popular [Rest Countries](https://restcountries.eu/) API project for getting information about the world's nations via REST calls. These calls allow users to retrieve all available countries or to retreive a given country's currency, capital city, calling code, region, sub-region, ISO 639-1 language, name, or country code.
+`{restcountriesr}` is a wrapper of the popular [Rest Countries](https://restcountries.eu/) API project for getting information about the world's nations via REST calls. These calls allow users to retrieve all available countries or to retreive a given country's currency, capital city, calling code, region, sub-region, ISO 639-1 language, name, or country code.
 
-The API END points output include country's name, full name, code, list of codes, currency, language, capital city, calling code, region, bloc, geographical coordinate, population and more. 
+The API endpoints output include country's name, full name, code, list of codes, currency, language, capital city, calling code, region, bloc, geographical coordinate, population and more. 
 
-In this vignette I walk through the process of getting started with the restcountries datapackage. 
+In this vignette I walk through the process of getting started with the `{restcountriesr}` package.
 
+<<<<<<< HEAD
 # Installing `restcountriesr`
+=======
+# Installing `{restcountriesr}`
+>>>>>>> 49c6f75a30e23f553caead0394d50972b7d36207
 
-The restcountries package can be downloaded from Github using the remotes package which allows easy installation of R packages from remote repositories such as Github. 
+The restcountriesr package can be downloaded from Github using the remotes package which allows easy installation of R packages from remote repositories such as Github. 
 ```
 install.packages("remotes")
 library(remotes)
 remotes::install_github("denironyx/restcountries")
 ```
 
+<<<<<<< HEAD
 ```{r setup, echo = FALSE}
 library(restcountriesr)
 ```
@@ -37,6 +42,10 @@ library(restcountriesr)
 
 # Rest Countries endpoints
 The restcountriesr datapackage can be filter by the following.
+=======
+# restcountriesr endpoints
+The restcountriesr package can be filter by the following
+>>>>>>> 49c6f75a30e23f553caead0394d50972b7d36207
 
 - Search by All
 - Search by Name or Full Name
@@ -87,7 +96,7 @@ df %>%
 ```
 
 ## Search by Name
-Search by country name. This function will allow you search countries by their short name, official name,native name or partial name. More information can be found https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages
+Search by country name. This function will allow you search countries by their short name, official name,native name or partial name. More information can be found on [Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages)
   
 ```{r}
 df <- rc_by_name("Nigeria")
@@ -102,7 +111,7 @@ df %>%
 ```
 
 ## Search by Country's Code
-Country codes are a component of the international telephone numbering plan, and are necessary only when dialing a telephone number to establish a call to another country. Country codes are dialed before the national telephone number. By convention, international telephone numbers are represented by prefixing the country code with a plus sign +, which also indicates to the subscriber that the local international call prefix must first be dialed. https://en.wikipedia.org/wiki/List_of_country_calling_codes
+[Country codes](https://en.wikipedia.org/wiki/List_of_country_calling_codes) are a component of the international telephone numbering plan, and are necessary only when dialing a telephone number to establish a call to another country. Country codes are dialed before the national telephone number. By convention, international telephone numbers are represented by prefixing the country code with a plus sign +, which also indicates to the subscriber that the local international call prefix must first be dialed. 
 
 ```{r}
 df <- rc_by_callingcode("234")
@@ -157,25 +166,4 @@ df <- rc_by_code('DE')
 ##List of columns
 
 df 
-
-
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
