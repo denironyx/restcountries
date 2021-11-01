@@ -21,11 +21,9 @@ The API endpoints output include country's name, full name, code, list of codes,
 
 In this vignette I walk through the process of getting started with the `{restcountriesr}` package.
 
-<<<<<<< HEAD
-# Installing `restcountriesr`
-=======
+
 # Installing `{restcountriesr}`
->>>>>>> 49c6f75a30e23f553caead0394d50972b7d36207
+
 
 The restcountriesr package can be downloaded from Github using the remotes package which allows easy installation of R packages from remote repositories such as Github. 
 ```
@@ -34,18 +32,14 @@ library(remotes)
 remotes::install_github("denironyx/restcountries")
 ```
 
-<<<<<<< HEAD
 ```{r setup, echo = FALSE}
 library(restcountriesr)
 ```
 
-
-# Rest Countries endpoints
-The restcountriesr datapackage can be filter by the following.
-=======
+ 
 # restcountriesr endpoints
 The restcountriesr package can be filter by the following
->>>>>>> 49c6f75a30e23f553caead0394d50972b7d36207
+
 
 - Search by All
 - Search by Name or Full Name
