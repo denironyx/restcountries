@@ -21,6 +21,7 @@ The restcountriesr datapackage can be filter by the following.
 - Search by Calling Code
 - Search by Region
 
+# Usage example
 ```
 library(restcountriesr)
 library(dplyr)
