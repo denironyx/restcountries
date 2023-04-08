@@ -36,3 +36,32 @@ df %>%
   select(all_of(parameter)) %>% 
   head()
 ```
+
+
+Attributes that can be passed in the filters list.
+-------------------------------------------------
+- topLevelDomain
+- alpha2Code
+- alpha3Code
+- currencies
+- capital
+- callingCodes
+- altSpellings
+- relevance
+- region
+- subregion
+- translations
+- population
+- latlng
+- demonym
+- area
+- gini
+- timezones
+- borders
+- nativeName
+- name
+- numericCode
+- languages
+- flag
+- regionalBlocs
+- cioc
