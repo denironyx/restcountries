@@ -20,3 +20,18 @@ The restcountriesr datapackage can be filter by the following.
 - Search by Capital City
 - Search by Calling Code
 - Search by Region
+
+```
+library(restcountriesr)
+library(dplyr)
+
+df <- rc_all()
+
+##List of columns
+parameter <- c("country_name", "capital", "iso2c", "iso3c", "calling_codes", "lat", "lon", "region", "currencies", "population")
+
+# The first 6 rows of the result queried
+df %>% 
+  select(all_of(parameter)) %>% 
+  head()
+```
