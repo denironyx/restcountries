@@ -14,9 +14,11 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
   httr,
-  usethis,
   jsonlite,
-  R.cache
+  R.cache,
+  dplyr,
+  purrr,
+  tidyr
 Suggests: 
     knitr,
     rmarkdown,
