@@ -2,12 +2,10 @@ Package: restcountriesr
 Type: Package
 Title: R wrapper for Restcountries API
 Version: 0.1.0
-Author: c(person(given = "Dennis",
-                family = "Irorere",
-                email = "denironyx@gmail.com")),
-          person(given = "Russell S.",
-                family = "Pierce",
-                email = "russell.s.pierce@gmail.com"))
+Authors@R: c(
+    person("Dennis", "Irorere", , "denironyx@gmail.com", c("aut", "cre")),
+    person("Russell S.", "Pierce", , "russell.s.pierce@gmail.com", "aut")
+    )
 Description: A wrapper of the popular restcountries restful api
 License: MIT + file LICENSE.md
 Encoding: UTF-8
@@ -16,6 +14,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
   httr,
+  usethis,
   jsonlite,
   R.cache
 Suggests: 
