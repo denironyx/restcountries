@@ -2,7 +2,7 @@
 
 restcountries_api_parameters <- list(
   base_url = "https://restcountries.com/",
-  version = "v2",
+  version = "v3.1",
   name = "name",
   region = "region",
   code = "alpha",

@@ -14,7 +14,7 @@ ua <- httr::user_agent("https://github.com/denironyx/countries")
 #' @importFrom httr GET http_error http_status http_type content
 #' @importFrom R.cache addMemoization
 restcountries_api <- addMemoization(function(path){
-  url <- paste0("https://restcountries.com/v2/", path = path)
+  url <- paste0("https://restcountries.com/v3.1/", path = path)
 
   resp = GET(url, ua)
 
