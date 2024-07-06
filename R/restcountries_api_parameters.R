@@ -13,8 +13,6 @@ restcountries_api_parameters <- list(
   regionalbloc = "regionalbloc"
 )
 
-# incomplete so commenting it out
-#wburls <-
 
 
 
