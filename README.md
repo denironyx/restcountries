@@ -1,5 +1,5 @@
 # restcountriesr
-A simple wrapper of the rest countries restful API - http://restcountries.eu/
+A simple wrapper of the rest countries restful API - http://restcountries.eu/. Deprecated
 
 # Installing `restcountries`
 
